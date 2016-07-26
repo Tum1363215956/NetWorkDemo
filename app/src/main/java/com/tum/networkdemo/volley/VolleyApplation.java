@@ -1,0 +1,24 @@
+package com.tum.networkdemo.volley;
+
+import android.app.Application;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+
+/**
+ * Created by GKF on 2016/7/26.
+ */
+public class VolleyApplation extends Application {
+
+    private static RequestQueue queue;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        queue = Volley.newRequestQueue(getApplicationContext());
+    }
+
+    public static RequestQueue getHttpQueue(){
+        return queue;
+    }
+}
